@@ -1,6 +1,6 @@
 {
   "name": "pi-provider-ollama-cloud",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Pi provider extension for Ollama Cloud (ollama.com), direct connection without a local server.",
   "license": "MIT",
   "keywords": [
