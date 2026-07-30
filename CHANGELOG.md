@@ -27,3 +27,7 @@
 - 内置已验证的基线模型目录，首次启动即可用。
 - 动态模型发现：`/v1/models` + `/api/show`，注册全部支持工具调用的云端模型（当前 18 个），自动识别 vision 与 thinking 能力，结果经 Pi 的 provider 模型存储持久化；离线时回退到 4 个已验证基线模型。
 - provider 级 OpenAI 兼容映射：关闭 `developer` 角色、`store`、`strict`，使用 `max_tokens` 字段。
+
+### Fixed
+
+- 统一 Pi `0.83` 开发依赖基线，修复依赖版本混用导致的 TypeScript 类型检查失败。
