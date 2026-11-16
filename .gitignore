@@ -3,3 +3,7 @@ node_modules/
 .DS_Store
 dist/
 .cache/
+
+# 本机原始现场（探测原始输出、抓包、原始日志）：本地证据，不随仓库分发
+.artifacts/
+!.artifacts/README.md

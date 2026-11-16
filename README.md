@@ -15,7 +15,7 @@
 ```bash
 pi install npm:pi-provider-ollama-cloud
 # 或本地开发
-pi -e /Users/diwu/Workspace/Codes/Githubs/pi-provider-ollama-cloud
+pi -e /Users/diwu/Workspace/Codes/Githubs/pi-extensions/pi-provider-ollama-cloud
 ```
 
 配置 API Key（任选其一）：
@@ -34,7 +34,7 @@ pi --model ollama-cloud/glm-5.2
 ## 目录与入口
 
 - `index.ts` — 扩展入口，注册 provider、认证、动态发现与兼容映射。
-- `doc/` — 设计依据、能力边界与决策档案。
+- `doc/` — 文档入口见 [`doc/README.md`](doc/README.md)：现行机制正文在 `doc/20-能力参考/`，难逆转决策在 `doc/决策档案/`，来源与验证证据在 `doc/references/`。
 - `test/` — provider 注册、发现解析与兼容性行为测试。
 
 ## 验证
