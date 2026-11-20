@@ -3,8 +3,8 @@
 ## 文件职责与阅读顺序
 
 - 本文件只记录 provider 长期工程、安全和验证边界，不固定当前远端模型清单。
-- 修改前读取 `README.md`、`doc/README.md`、`doc/20-能力参考/Ollama-Cloud-接口事实.md`、`package.json`、`index.ts` 和测试。
-- `doc/20-能力参考/` 是现行机制与协议约定的唯一正文；`doc/references/` 只保存官方来源、探测记录与时点快照，不作为现行权威。`doc/决策档案/` 收难逆转决策，`doc/经验笔记.md` 收可改做法。本机原始现场放 `.artifacts/`（Git 忽略）。
+- 修改前读取 `README.md`、`doc/README.md`、`doc/规格/Ollama-Cloud-接口事实.md`、`package.json`、`index.ts` 和测试。
+- `doc/规格/` 是现行机制与协议约定的唯一正文；`doc/references/` 只保存官方来源、探测记录与时点快照，不作为现行权威。`doc/决策档案/` 收难逆转决策，`doc/经验笔记.md` 收可改做法。本机原始现场放 `.artifacts/`（Git 忽略）。
 
 ## 项目边界
 
@@ -28,5 +28,5 @@ pi -e . --list-models | grep ollama-cloud
 
 ## 文档与 Git
 
-- provider ID、鉴权、发现策略、请求协议或安装方式变化时同步 README 与能力参考。
+- provider ID、鉴权、发现策略、请求协议或安装方式变化时同步 README 与规格正文。
 - 未经用户明确要求，不执行 commit、push、tag 或 npm publish。

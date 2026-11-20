@@ -34,7 +34,7 @@ pi --model ollama-cloud/glm-5.2
 ## 目录与入口
 
 - `index.ts` — 扩展入口，注册 provider、认证、动态发现与兼容映射。
-- `doc/` — 文档入口见 [`doc/README.md`](doc/README.md)：现行机制正文在 `doc/20-能力参考/`，难逆转决策在 `doc/决策档案/`，来源与验证证据在 `doc/references/`。
+- `doc/` — 文档入口见 [`doc/README.md`](doc/README.md)：现行机制与协议正文在 `doc/规格/`，难逆转决策在 `doc/决策档案/`，来源与验证证据在 `doc/references/`。
 - `test/` — provider 注册、发现解析与兼容性行为测试。
 
 ## 验证
