@@ -1,6 +1,8 @@
 # pi-provider-ollama-cloud 文档入口
 
-1. [用户说明](../README.md) — 是什么、给谁用、怎么运行、验证命令。
+> **English contribution guide:** [README.md](../README.md) (usage) · [README-zh.md](../README-zh.md) (Chinese companion) · [AGENTS.md](../AGENTS.md) (engineering rules). Keep both READMEs and this map in sync; user-visible release notes go to `CHANGELOG.md`.
+
+1. [用户说明](../README.md) / [中文用户说明](../README-zh.md) — 是什么、给谁用、怎么运行、验证命令，两种语言同步。
 2. [规格正文](./规格/Ollama-Cloud-接口事实.md) — 端点、认证、模型发现、协议兼容映射与离线首启基线的唯一正文。
 3. [决策档案](./决策档案/README.md) — 难逆转决策的索引。
 4. [经验笔记](./经验笔记.md) — 可改做法与避坑经验。
@@ -36,4 +38,4 @@
 
 - 机制或协议约定变化 → 更新 `doc/规格/` 对应正文；难逆转决策 → 新增 ADR 并同步索引；可复用做法 → 追加 `经验笔记.md`。
 - 来源、探测记录与时点快照 → 追加 `doc/references/`，不回写进现行正文。
-- 用户可感知的已完成变化 → `CHANGELOG.md`；本机原始现场 → `.artifacts/`（Git 忽略）。
+- 日常事实先写入本仓中文 `CHANGELOG-zh.md`；准备发布时按版本把用户可感知的已完成变化同步到英文 `CHANGELOG.md`；两份 changelog 都随 npm 包发布。本机原始现场 → `.artifacts/`（Git 忽略）。

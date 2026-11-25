@@ -1,46 +1,56 @@
 # pi-provider-ollama-cloud
 
-直连 [Ollama Cloud](https://ollama.com)（`ollama.com`）的 [Pi](https://pi.dev) 自定义 provider 扩展。
+English · [简体中文](./README-zh.md)
 
-## 这是什么
+A custom [Pi](https://pi.dev) provider extension that connects directly to [Ollama Cloud](https://ollama.com).
 
-注册 `ollama-cloud` provider，不经本地 Ollama 服务，直连 Ollama 托管 API（`https://ollama.com/v1`）。通过 OpenAI 兼容的 Chat Completions 协议调用云端模型，并用 `/v1/models` + `/api/show` 动态发现支持工具调用的模型。
+## What it is
 
-## 给谁用
+Registers the `ollama-cloud` provider. It does not go through a local Ollama server; it connects directly to the Ollama hosted API (`https://ollama.com/v1`). Cloud models are called through the OpenAI-compatible Chat Completions protocol, and `/v1/models` + `/api/show` dynamically discover models that support tool calls.
 
-有 Ollama Cloud API Key、希望在 Pi 中直接使用云端模型（无需本地 Ollama 服务）的开发者。
+## Who it is for
 
-## 怎么运行
+Developers with an Ollama Cloud API Key who want to use cloud models in Pi directly, without a local Ollama service.
+
+## How to run
 
 ```bash
 pi install npm:pi-provider-ollama-cloud
-# 或本地开发
+# or local development (this workspace path)
 pi -e /Users/diwu/Workspace/Codes/Githubs/pi-extensions/pi-provider-ollama-cloud
+# or, from the repository root
+pi -e .
 ```
 
-配置 API Key（任选其一）：
+Configure the API key (either way):
 
 ```bash
-export OLLAMA_API_KEY=你的 Ollama Cloud API Key
-# 或在 Pi 内 /login 后选择 ollama-cloud
+export OLLAMA_API_KEY=your-ollama-cloud-api-key
+# or choose ollama-cloud after /login inside Pi
 ```
 
-随后用 `/model` 选择 `ollama-cloud` 下的模型，或：
+Then pick a model under `ollama-cloud` with `/model`, or run:
 
 ```bash
 pi --model ollama-cloud/glm-5.2
 ```
 
-## 目录与入口
+## Development, tests, and public contracts
 
-- `index.ts` — 扩展入口，注册 provider、认证、动态发现与兼容映射。
-- `doc/` — 文档入口见 [`doc/README.md`](doc/README.md)：现行机制与协议正文在 `doc/规格/`，难逆转决策在 `doc/决策档案/`，来源与验证证据在 `doc/references/`。
-- `test/` — provider 注册、发现解析与兼容性行为测试。
+- Development and contribution rules: [`AGENTS.md`](./AGENTS.md) and [`doc/README.md`](./doc/README.md).
+- Tests: [`test/README.md`](./test/README.md) and [`test/provider.test.ts`](./test/provider.test.ts); behavior checks cover provider registration, discovery parsing, and compatibility mapping.
+- Public contract: the current endpoint, authentication, discovery, and compatibility rules are in [`doc/规格/Ollama-Cloud-接口事实.md`](./doc/规格/Ollama-Cloud-接口事实.md) (Chinese); the implementation is [`index.ts`](./index.ts). Source links, probe records, and snapshots are in [`doc/references/`](./doc/references/) and are not current authority.
 
-## 验证
+## Directories and entry points
+
+- `index.ts` — extension entry: provider registration, authentication, dynamic discovery, and compatibility mapping.
+- `doc/` — document map in [`doc/README.md`](./doc/README.md): current mechanism and protocol in `doc/规格/`, hard-to-reverse decisions in `doc/决策档案/`, sources and verification evidence in `doc/references/`.
+- `test/` — provider registration, discovery parsing, and compatibility behavior tests.
+
+## Verification
 
 ```bash
-npm run check   # 类型检查
-npm test        # 行为测试
+npm run check   # type-check
+npm test        # behavior tests
 pi --list-models | grep ollama-cloud
 ```
